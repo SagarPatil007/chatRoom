@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="padding: 20px;">
+        <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom border-shadow">
+            <a href="http://localhost:80/php/ChatRoom%20PHP/" class="d-flex align-items-center text-dark text-decoration-none">
+                <span class="fs-3">ChatRoom.com</span>
+            </a>
+
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                <a class="me-3 py-2 text-dark text-decoration-none" href="#">Home</a>
+                <a class="me-3 py-2 text-dark text-decoration-none"
+                    href="">About</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" href="#">Contact</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" href="signin.html">sign in</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="login">
+        <div class="main-agileits">
+            <div class="form-w3agile">
+                <h3>Login</h3>
+                <form action="php/SignIn.php" method="post">
+                    <div class="key">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <input type="text" value="Name" autocomplete="off" name="Name" onfocus="this.value = '';"
+                             required="">
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="key">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <input type="text" value="Password" autocomplete="off" name="Password" onfocus="this.value = '';"
+                           required="">
+                        <div class="clearfix"></div>
+                    </div>
+                    <input type="submit" value="Login">
+                </form>
+            </div>
+
+            <div class="forg">
+                <a href="#" class="forg-left">Forgot Password</a>
+                <a href="http://localhost:80/php/ChatRoom%20PHP/signup.html"
+                    class="forg-right">Register</a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
