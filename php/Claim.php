@@ -17,7 +17,7 @@ if(!isset($cuser)){
    checkuser();
   
 }else{    
-    // checking room name
+    // checking room name validation
     if(strlen($room)>20 or strlen($room)<2 ) {
         $message = "please choose a name between 2 to 20 characters"; 
         echo '<script type="text/javascript">';

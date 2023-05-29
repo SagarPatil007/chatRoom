@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,7 +8,6 @@
     <meta name="generator" content="Hugo 0.82.0">
     <link rel="icon" href="img\favicon.png">
     <title>ChatRoom.com</title>
-
      
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -31,11 +29,13 @@
           font-size: 3.5rem;
         }
       }
+      
     </style>
     
   </head>
   <body>
 
+      <!-- navbar -->
   <div style="padding: 20px;">
   <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom border-shadow">
   <a href="http://localhost:80/php/ChatRoom%20PHP/" class="d-flex align-items-center text-dark text-decoration-none">
@@ -47,17 +47,20 @@
     <a class="me-3 py-2 text-dark text-decoration-none" href="#">About</a>
     <a class="me-3 py-2 text-dark text-decoration-none" href="#">Contact</a>
     <a class="me-3 py-2 text-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">Join Room </a>
-    <a class="me-3 py-2 text-dark text-decoration-none" href="http://localhost:80/php/ChatRoom%20PHP/signin.html">sign in</a>
+    
+    <a class="me-3 py-2 text-dark text-decoration-none sign-class" href="http://localhost:80/php/ChatRoom%20PHP/signin.html">sign in</a>
   </nav>
   </header>
   </div>
     
+  <!-- homepage  -->
 <main>
+
   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
       <h1 class="display-4 fw-normal">ChatRoom.com.</h1>
       <p class="lead fw-normal">Chat With your friend and enjoy fastest chatting service with 100% secure chat.</p>
-      <p class="lead fw-normal" style="color: red;">Craete New ChatRoom Here</p>
+      <p class="lead fw-normal">Create New ChatRoom Here</p>
       <form action="php/Claim.php" method="POST">
         ChatRoom.com/<input type="text" name="room" autocomplete="off">   
         <button class="btn btn-outline-secondary" href="#" >Claim Room</button>
@@ -113,6 +116,7 @@
   </div>
 </div>
 
+<!-- footer -->
 <footer class="container py-5">
   <div class="row">
     <div class="col-12 col-md">
@@ -180,8 +184,7 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
   modalBodyInput.value = recipient
 })
 </script>
-<!-- <script src="js/style.js"></script> -->
-
       
   </body>
 </html>
+

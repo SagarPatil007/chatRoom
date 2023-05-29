@@ -3,6 +3,8 @@
 $roomname = $_GET['roomname'];
 include 'db_connect.php';
 
+$cuser = $_COOKIE['user'];
+
 // Execute sql to check wheather room exists
 
 $sql = "SELECT * FROM `room` WHERE roomname ='$roomname'";
@@ -37,6 +39,7 @@ else{
   padding: 8px;
   margin: 10px 0;
 }
+
 .text{
   text-align: center;
 }
@@ -51,28 +54,10 @@ else{
   float: right;
 }
 
-.receive{
-  float: left;
-}
-
 .container::after {
   content: "";
   clear: both;
   display: table;
-}
-
-.container img {
-  float: left;
-  max-width: 60px;
-  width: 100%;
-  margin-right: 20px;
-  border-radius: 50%;
-}
-
-.container img.right {
-  float: right;
-  margin-left: 20px;
-  margin-right:0;
 }
 
 .time-right {
@@ -112,6 +97,8 @@ else{
   </header>
   </div>
 
+
+  <!-- dynamically the text adding -->
 <div class="form" >
 <h2 class="text" >Chat Messages <?php echo $roomname ?></h2>
 
@@ -133,6 +120,7 @@ else{
 
 // check for new mesaages
 setInterval(runFunction,1000);
+
 function runFunction(){
   $.post("htcont.php", {room:'<?php echo $roomname?>'},
     function (data ,status){
@@ -152,7 +140,7 @@ function runFunction(){
 
   $("#submitmsg").click(function(){
       var clientmsg = $('#usermsg').val(); 
-    $.post("postmsg.php", {text: clientmsg, room:'<?php echo $roomname?>' ,ip:'<?php  echo $_SERVER['REMOTE_ADDR']; ?>'},
+    $.post("postmsg.php", {text: clientmsg, room:'<?php echo $roomname?>' ,ip:'<?php  echo $cuser." " ?>'},
     function(data,status){
       document.getElementsByClassName('anyclass')[0].innerHTMl = data;});
       $("#usermsg").val("");

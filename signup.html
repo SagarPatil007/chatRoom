@@ -12,6 +12,51 @@
 
     <link href="css/style.css" rel='stylesheet' type='text/css'/>
 
+    <style>
+        .lable{
+            font-weight: bolder;
+        }
+    </style>
+    <script>
+        function validate(){
+            var username = document.getElementById('username')
+            var pass = document.getElementById('pass')
+            var email = document.getElementById('email')
+            var mobile = document.getElementById('mobile')
+            var regexp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const mobileRegex = /^\d{10}$/;
+           
+
+            if(username.value == '' || pass.value == '' || email.value == '' || mobile.value == ''){
+                alert("please enter the inputs")
+                return false;
+            }
+
+            if(!email.value.match(regexp)){
+                alert("please enter the valid email address")
+                return false;
+            }       
+
+
+            if(pass.value.length < 4){
+                alert("Password must contain 4 characters")
+                return false;
+            }
+
+            
+            console.log(mobile.value.length);
+
+            if(!mobile.value.match(mobileRegex)){
+                alert("please enter valid mobile number");
+                return false;
+            }
+            
+            
+            return true;
+        }
+        
+    </script>
+
 </head>
 
 <body>
@@ -33,36 +78,35 @@
     
     <div class="login">
         <div class="main-agileits">
-            <div class="form-w3agile form1">
+            <div class="form-w3agile">
                 <h3>Register</h3>
-                <form action="php/SignUp.php" method="post">
+                <form onsubmit="return validate()" action="php/SignUp.php" method="post" autocomplete="off">
+
+                    <label for="" class="label">Username</label>
                     <div class="key">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <input type="text" value="Username" name="Username" autocomplete="off" onfocus="this.value = '';"
-                            onblur="if (this.value == '') {this.value = 'Username';}" required="">
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="key">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <input type="text" value="Email" name="Email" autocomplete="off" onfocus="this.value = '';"
-                        onblur="if (this.value == '') {this.value = 'Email';}" required="">
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="key">
-                        <i class="fa fa-lock" aria-hidden="true"></i>
-                        <input type="text" value="Password" name="Password" autocomplete="off" onfocus="this.value = '';"
-                            onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                        <input type="text" name="Username" id="username">
                         <div class="clearfix"></div>
                     </div>
 
+                    <label for="" class="label">Email</label>
                     <div class="key">
-                        <i class="fa fa" aria-hidden="true"></i>
-                        <input type="text" name="mobile_no" autocomplete="off" value="Mobile Number"
-                            onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile Number';}"
-                            required="">
+                        <input type="text" id="email" name="Email">
                         <div class="clearfix"></div>
                     </div>
-                    <input type="submit" value="Submit" onclick="submit_toast();">
+
+                    <label for="" class="label">Password</label>
+                    <div class="key">
+                        <input type="password" id="pass" name="Password">
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <label for="" class="label">Mobile No.</label>
+                    <div class="key">
+                        <input type="text" id="mobile" name="mobile_no">
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <input type="submit" value="Submit">
                 </form>
             </div>
 

@@ -8,7 +8,6 @@ $database = "chatroom";
 
 //Creating database connection
 
-
 $con = mysqli_connect($servername, $username, $password, $database);
 
 //check connection

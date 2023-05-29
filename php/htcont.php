@@ -16,16 +16,17 @@ if(mysqli_num_rows($result)>0){
         if($row['senderName']== $sessionuser){
             $res = $res. '<div class="container darker">';
             $res = $res. '<div class="send">';
-            $res = $res. $row['ip'];
-            $res = $res ."says <p>".$row['msg'];
+            $res = $res. '<div style="font-weight: bold;">'.$row['ip'].'</div>';
+            $res = $res ."<p>".$row['msg'];
             $res = $res. '<p> <span class= "time-right">' .$row["stime"] .'</span></div>';
             $res = $res .'</div>';
         }
         else{
-            $res = $res. '<div class="container ">';
-            $res = $res. $row['ip'];
-            $res = $res ."says <p >".$row['msg'];
+            $res = $res. '<div class="container">';
+            $res = $res. '<div style="font-weight:bold;">'.$row['ip'].'</div>';
+            $res = $res ."<p >".$row['msg'];
             $res = $res. '<p> <span class= "time-left">' .$row["stime"] .'</span></div>';
+            $res = $res .'</div>';
         }
     }
 }
